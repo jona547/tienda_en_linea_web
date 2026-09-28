@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN WEAR - Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">URBAN<span>WEAR</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html?genero=hombre">Hombre</a>
+                <a href="catalogo.html?genero=mujer">Mujer</a>
+                <a href="catalogo.html">Colecciones</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Buscar">🔍</button>
+                <button class="icon-btn cart-btn" aria-label="Carrito">
+                    🛒 <span class="badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATÁLOGO PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- BARRA LATERAL DE FILTROS -->
+        <aside class="sidebar-filters">
+            <div class="filter-header">
+                <h3>Filtros</h3>
+                <button class="btn-clear" type="button">Limpiar</button>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Categorías</h4>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Chamarras" checked> Chamarras</label>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Playeras" checked> Playeras</label>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Pantalones" checked> Pantalones</label>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Sudaderas" checked> Sudaderas</label>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Vestidos" checked> Vestidos</label>
+                <label class="custom-checkbox"><input type="checkbox" data-cat="Chaquetas" checked> Chaquetas</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Rango de Precio Máximo</h4>
+                <input type="range" min="200" max="1500" value="1500" class="price-slider">
+                <div class="price-labels">
+                    <span>$200</span>
+                    <span class="max-price-val">$1,500 MXN</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MALLA DE PRODUCTOS -->
+        <section class="products-section">
+            <div class="products-header">
+                <h2>Catálogo de Prendas</h2>
+                <span class="results-count">Mostrando 6 de 6 productos</span>
+            </div>
+
+            <div class="products-grid">
+                
+                <!-- PRODUCTO 1 -->
+                <article class="product-card" data-category="Chamarras" data-price="899" data-gender="hombre">
+                    <a href="detalle.html?id=chamarra-mezclilla" class="card-link">
+                        <div class="card-image">
+                            <span class="tag tag-popular">Popular</span>
+                            <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=600&auto=format&fit=crop" alt="Chamarra de Mezclilla">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('chamarra-mezclilla')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Chamarras</span>
+                            <h3>Chamarra de Mezclilla</h3>
+                            <p class="price">$899.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- PRODUCTO 2 -->
+                <article class="product-card" data-category="Playeras" data-price="349" data-gender="mujer">
+                    <a href="detalle.html?id=playera-oversize" class="card-link">
+                        <div class="card-image">
+                            <span class="tag tag-new">Nuevo</span>
+                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=600&auto=format&fit=crop" alt="Playera Oversize Negra">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('playera-oversize')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Playeras</span>
+                            <h3>Playera Oversize Negra</h3>
+                            <p class="price">$349.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- PRODUCTO 3 -->
+                <article class="product-card" data-category="Pantalones" data-price="699" data-gender="hombre">
+                    <a href="detalle.html?id=pantalon-cargo" class="card-link">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=600&auto=format&fit=crop" alt="Pantalón Cargo Gris">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('pantalon-cargo')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Pantalones</span>
+                            <h3>Pantalón Cargo Gris</h3>
+                            <p class="price">$699.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- PRODUCTO 4 -->
+                <article class="product-card" data-category="Sudaderas" data-price="599" data-gender="mujer">
+                    <a href="detalle.html?id=sudadera-capucha" class="card-link">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop" alt="Sudadera con Capucha">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('sudadera-capucha')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Sudaderas</span>
+                            <h3>Sudadera con Capucha</h3>
+                            <p class="price">$599.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- PRODUCTO 5 -->
+                <article class="product-card" data-category="Vestidos" data-price="749" data-gender="mujer">
+                    <a href="detalle.html?id=vestido-casual" class="card-link">
+                        <div class="card-image">
+                            <span class="tag tag-sale">Oferta</span>
+                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=600&auto=format&fit=crop" alt="Vestido Casual Algodón">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('vestido-casual')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Vestidos</span>
+                            <h3>Vestido Casual Algodón</h3>
+                            <p class="price">$749.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- PRODUCTO 6 -->
+                <article class="product-card" data-category="Chaquetas" data-price="999" data-gender="hombre">
+                    <a href="detalle.html?id=chaqueta-rompevientos" class="card-link">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=600&auto=format&fit=crop" alt="Chaqueta Rompevientos">
+                            <button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('chaqueta-rompevientos')">🛒 Agregar al Carrito</button>
+                        </div>
+                        <div class="card-info">
+                            <span class="category">Chaquetas</span>
+                            <h3>Chaqueta Rompevientos</h3>
+                            <p class="price">$999.00 <span class="currency">MXN</span></p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="product-card" data-category="Playeras" data-price="399" data-gender="hombre">
+                    <a href="detalle.html?id=playera-estampada-hombre" class="card-link"><div class="card-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop" alt="Playera Estampada Street"><button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('playera-estampada-hombre')">🛒 Agregar al Carrito</button></div><div class="card-info"><span class="category">Playeras</span><h3>Playera Estampada Street</h3><p class="price">$399.00 <span class="currency">MXN</span></p></div></a>
+                </article>
+                <article class="product-card" data-category="Pantalones" data-price="649" data-gender="mujer">
+                    <a href="detalle.html?id=pantalon-jogger-hombre" class="card-link"><div class="card-image"><img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?q=80&w=600&auto=format&fit=crop" alt="Jogger Urbano Negro"><button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('pantalon-jogger-hombre')">🛒 Agregar al Carrito</button></div><div class="card-info"><span class="category">Pantalones</span><h3>Jogger Urbano Negro</h3><p class="price">$649.00 <span class="currency">MXN</span></p></div></a>
+                </article>
+                <article class="product-card" data-category="Sudaderas" data-price="699" data-gender="hombre">
+                    <a href="detalle.html?id=sudadera-hombre" class="card-link"><div class="card-image"><img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?q=80&w=600&auto=format&fit=crop" alt="Sudadera Urbana Beige"><button type="button" class="quick-add" onclick="event.preventDefault(); agregarAlCarrito('sudadera-hombre')">🛒 Agregar al Carrito</button></div><div class="card-info"><span class="category">Sudaderas</span><h3>Sudadera Urbana Beige</h3><p class="price">$699.00 <span class="currency">MXN</span></p></div></a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="index.html" class="brand-logo footer-logo">URBAN<span>WEAR</span></a>
+                <p>Tu destino número uno para encontrar el mejor estilo urbano y de calle.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Ayuda y Soporte</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Métodos de Pago</h4>
+                <p>Aceptamos Visa, Mastercard, American Express y PayPal.</p>
+                <div class="payments-icons">💳 🅿️ 🪙</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 URBANWEAR Inc. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
